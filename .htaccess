@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# 如果请求的是真实存在的文件或目录，直接访问
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 其他所有请求路由到 index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
